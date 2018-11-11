@@ -19,5 +19,10 @@ class FileResourceService
       size: DEFAULT_PAGE_SIZE,
       from: DEFAULT_PAGE_SIZE * (page - 1)
     )
+  rescue Elasticsearch::Transport::Transport::Errors::NotFound
+    OpenStruct.new(
+      total: 0,
+      results: []
+    )
   end
 end
