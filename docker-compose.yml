@@ -1,0 +1,16 @@
+version: '2'
+services:
+  api:
+    build: ./
+    environment:
+      RAILS_ENV: 'production'
+      ELASTICSEARCH_HOST: 'elasticsearch'
+    links:
+      - elasticsearch
+    ports:
+      - 3000:3000
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+    ports:
+      - 9200:9200
