@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'virtus'
-
 class FileResource
   include Virtus.model
 

@@ -23,6 +23,8 @@ Metrics/MethodLength:
 
 Metrics/BlockLength:
   Enabled: true
+  Exclude:
+    - 'spec/**/*'
 
 Metrics/AbcSize:
   Max: 20
