@@ -15,6 +15,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'guard-rspec', '4.7.3'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'rubocop', '0.60.0'
   gem 'spring'

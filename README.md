@@ -29,3 +29,8 @@ To run tests:
 ```bash
 bundle exec rspec
 ```
+
+To run tests and watch for file changes:
+```bash
+bundle exec guard
+```
