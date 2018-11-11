@@ -1,0 +1,37 @@
+AllCops:
+  Include:
+    - 'Gemfile'
+    - 'app/**/*'
+    - 'lib/**/*'
+    - 'spec/**/*'
+  Exclude:
+    - 'bin/**/*'
+  TargetRubyVersion: 2.5.3
+  DisplayCopNames: true
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/ModuleLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/BlockLength:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 20
+
+Style/Encoding:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Style/ClassVars:
+  Enabled: false
