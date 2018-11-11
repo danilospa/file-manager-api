@@ -1,5 +1,19 @@
 # File Manager API
 
+## Considerations
+
+At a first moment, I though about using database to store the file name and tags. Although, when I started thinking about implementing the search endpoint, I realize it would be complex to create a query to retrieve the desired information. So I decided to facilitate things and let a search engine to the job, I used Elasticsearch. Since this is a simple application, I also decided to remove the database at all, relying only on Elasticsearch storage.
+
+I would call the model that represents the file as `File`, but it would conflict with the built in Ruby class. That's why I used the `FileResource` name instead. The `resources/` folder is not related at all with the `FileResource` class. This directory contains files that represents the endpoint responses. Ideally, in order to keep the pattern, the response for the POST endpoint would be a class on this folder too. A better name for `FileResource` would also be appreciated to avoid this possible confusion.
+
+Despite the test description introduces an `application that allows users to upload files`, I assumed no file upload feature would be needed because the API specifications does not describe an endpoint to actually upload a file. But in case it was needed, I would upload the files to AWS S3 using the aws-sdk.
+
+To keep things simple and avoid exceeding more time, I developed the `related_tags` response for the search endpoint considering only the returned results from the requested page. Otherwise, it would need other request to Elasticsearch to retrieve all tags from all results, without pagination.
+
+The following are some things I would develop if I had no time limit:
+- Parameter validation to ensure correctness (validate `-+ ` chars for POST endpoint and `+-` signals for query on GET endpoint).
+- Unit tests to resource and service.
+
 ## Dependencies
 
 - Ruby 2.5.1
