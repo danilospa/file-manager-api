@@ -13,6 +13,11 @@ gem install bundler
 bundle install -j4
 ```
 
+Copy configuration file example and fill elasticsearch host and port:
+```bash
+cp .env.example .env
+```
+
 Start up the server:
 ```
 bundle exec puma

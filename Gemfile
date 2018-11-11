@@ -6,11 +6,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.5.1'
 
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'elasticsearch-persistence', '6.0.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'rspec-rails', '3.8.1'
+gem 'virtus', '1.0.5'
 
 group :development, :test do
+  gem 'dotenv-rails', '2.5.0'
   gem 'pry', '0.12.0'
 end
 
